@@ -1,0 +1,1305 @@
+<!DOCTYPE html><html lang="en"><head>
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="cache-control" content="no-cache, no store" />
+        <meta http-equiv="cache-control" content="private" />
+        <meta http-equiv="cache-control" content="must-revalidate" />
+        <meta http-equiv="cache-control" content="post-check=0" />
+        <meta http-equiv="cache-control" content="pre-check=0" />
+        <meta http-equiv="pragma" content="no-cache" />
+     <![endif]-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+     
+    <title>Login Page : Telangana Real Estate Regulatory Authority</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="no-cache, no store">
+    <meta http-equiv="cache-control" content="private">
+    <meta http-equiv="cache-control" content="must-revalidate">
+    <meta http-equiv="cache-control" content="post-check=0">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="cache-control" content="pre-check=0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../Content/Login.css" rel="stylesheet" type="text/css">
+    <link href="../../Content/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../Content/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="../../Content/msgBoxLight.css" rel="stylesheet" type="text/css">
+    <link href="../../Scripts/sweetalert2.css" rel="stylesheet" type="text/css">
+    <link href="/Content/demo.css" rel="stylesheet">
+    <link href="/Content/normalize.css" rel="stylesheet">
+    <link href="/Content/set1.css" rel="stylesheet">
+    <script src="../../Scripts/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <!--[if IE]>
+        <script src="../../Scripts/respond.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../Scripts/html5shiv.js"></script>
+    <![endif]-->
+    <script src="../../Scripts/jquery.slimscroll.js" type="text/javascript"></script>
+    <script src="../../Scripts/custom.js" type="text/javascript"></script>
+    <script src="../../Scripts/ValidationScripts.js" type="text/javascript"></script>
+    <script src="../../Scripts/md5.js" type="text/javascript"></script>
+    <script src="../../Scripts/sweet-alert2.min.js" type="text/javascript"></script>
+    <script src="/Scripts/classie.js"></script>
+    <script src="../../Scripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        function burstCache() {
+            if (!navigator.onLine) {
+                document.body.innerHTML = 'Loading...';
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+    </script>
+    
+</head>
+<body>
+    <noscript>
+        <META HTTP-EQUIV="Refresh" CONTENT="0;URL=../ShowErrorPage.html">
+    </noscript>
+
+    <section>
+        <div class="login-panel">
+            
+            
+
+<link href="/Content/jquery-ui.css" rel="stylesheet">
+<script src="/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+<script src="/Scripts/sweet-alert2.min.js"></script>
+<link href="/Scripts/sweetalert2.css" rel="stylesheet">
+<script src="/Scripts/jquery-1.7.1.min.js"></script>
+<link href="/Content/jquery-ui.css" rel="stylesheet">
+<script src="/Scripts/jquery-ui-1.10.0.min.js"></script>
+
+<script src="/Scripts/jquery-1.11.1.min.js"></script>
+<script src="/Scripts/jquery-ui-1.11.1.min.js"></script>
+<link href="/Scripts/jquery-ui-1.11.1.css" rel="stylesheet">
+
+<script src="/Scripts/bootstrap.js"></script> 
+
+
+
+
+
+
+
+<style>
+    .loader {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url('../../Images/loading.gif') 50% 50% no-repeat rgb(249,249,249);
+        opacity: .8;
+    }
+
+    .header-search {
+        margin-top: 10px;
+    }
+
+    .header-title {
+        color: #333;
+        margin-top: 15px;
+        display: inline-block;
+    }
+</style>
+
+
+<script type="text/javascript">
+    $(window).load(function () {
+        $(".loader").fadeOut("slow");
+    });
+
+    $(document).ready(function () {
+        debugger;
+        $('.radioBtn input[type="radio"][name="Type"]').change(function () {
+         
+            $('.radioBtn  label[for="Promoter"], .radioBtn  label[for="Agent"]').removeClass('active');
+
+            var selectedId = $(this).attr('id');
+            $('.radioBtn  label[for="' + selectedId + '"]').addClass('active');
+            var selectedVal = $('#' + selectedId).val(); //added 
+            $("#projectSearchHeading").text(selectedVal === "Promoter" ? "Search Project Details" : "Search Agent Details");// added
+        });
+
+        debugger;
+        var PageSize1= $("#PageSize").val();
+        if(PageSize1!='' &&  PageSize1!='undefined'&&PageSize1!=null)
+        {
+            if( PageSize1==10 ||  PageSize1==0)
+            {
+                $("#PageSize").val('10');
+            }
+            else
+            {
+                $("#PageSize").val(PageSize1);
+            }
+        }
+
+
+        var type= null;
+
+        if (type === "Agent") {
+            $("#projectSearchHeading").text("Search Agent Details");
+        } else {
+            $("#projectSearchHeading").text("Search Project Details");
+        }//added
+
+        if(type!= "Agent")
+        {
+            var hdnRoleIDPageload = $("#hdnRoleIDPageload").attr("value");
+            if(hdnRoleIDPageload=="1")
+            {
+                Promoter = document.getElementById("Promoter");
+                Promoter.checked = true;
+            }
+            else if (hdnRoleIDPageload=="0")
+            {
+                Agent = document.getElementById("Agent");
+                Agent.checked = true;
+            }
+        }
+        if(type=="Promoter")
+        {
+            $("#divAgentName").hide();
+            $("#divProject").show();
+            $("#divPromoName").show();
+            $("#divAdvanceSearchbtn").show();
+            $("#divCerti").show();
+            $("#divHideAdvanceSearchbtn").hide();
+
+            debugger;
+            var dist = $("#hdnDistrict").attr("value");
+            var proj = $("#hdnProject").attr("value");
+            var taluka = $("#hdnTaluka").attr("value");
+            var village = $("#hdnVillage").attr("value");
+            var pro_name = $("#hdnProject").attr("value");
+            var promoter_name = $("#hdnPromoter").attr("value");
+            var cert_no = $("#hdnCertiNo").attr("value");
+            var from_date = $("#hdnfromdate").attr("value");
+            var to_date = $("#hdntodate").attr("value");
+            var pro_type = $("#hdnPType").attr("value");
+            var Plot_Bearing = $("#hdnPlotBearing").attr("value");
+
+            if((dist!=undefined && dist!='') || (taluka!=undefined && taluka!='') || (village!=undefined && village!='') || (from_date!=undefined && from_date!='')|| (to_date!=undefined && to_date!='') || (pro_type!=undefined && pro_type!=''))
+            {
+                $("#divTalVill").show();
+                $("#divTalVill2").show();
+                $("#divDistrict").show();
+                $("#divFromDate").show();
+                $("#divToDate").show();
+                $("#divProjectType").show();
+                $("#divPlotBearing").show();
+                $("#divHideAdvanceSearchbtn").show();
+                $("#divAdvanceSearchbtn").hide();
+                $("#divAgentName").hide();
+            }
+            else
+            {
+                $("#divTalVill").hide();
+                $("#divTalVill2").hide();
+                $("#divDistrict").hide();
+                $("#divFromDate").hide();
+                $("#divToDate").hide();
+                $("#divProjectType").hide();
+                $("#divPlotBearing").hide();
+                $("#divAdvanceSearchbtn").show();
+                $("#divHideAdvanceSearchbtn").hide();
+                $("#PromoterName").hide();
+            }
+
+
+            if(dist != undefined && dist != '')
+            {
+                InnerDistrict(division,'District',dist);
+                //DistrictList('Division','District',dist);
+                if(proj != undefined && proj != '')
+                {
+                    var DivID = $("#Division").val();
+                    var DisID = dist; //$("#" + ID).val();
+                    ProjectName(DivID, DisID, 'Project', proj);
+                }
+                if(taluka!=undefined && taluka!='')
+                {
+                    InnerTaluka(dist, "Taluka", taluka);
+                    if(village!=undefined && village!='')
+                    {
+                        InnerVillage(taluka, 'Village',village);
+                    }else{
+                        InnerVillage(taluka, 'Village',0);
+                    }
+                }else{
+                    InnerTaluka(dist, "Taluka", 0);
+                }
+
+            }
+            else{
+                InnerDistrict(division,'District',0);
+            }
+
+
+        }
+        else
+        {
+            $("#divAgentName").hide();
+            $("#divProject").show();
+            $("#divPromoName").show();
+            $("#divTalVill").hide();
+            $("#divTalVill2").hide();
+            $("#divCerti").show();
+            $("#divDistrict").hide();
+            $("#divFromDate").hide();
+            $("#divToDate").hide();
+            $("#divAdvanceSearchbtn").hide();
+            $("#divHideAdvanceSearchbtn").hide();
+            $("#divProjectType").hide();
+            $("#divPlotBearing").hide();
+            var dist = $("#hdnDistrict").attr("value");
+            var proj = $("#hdnProject").attr("value");
+            var taluka = $("#hdnTaluka").attr("value");
+            var village = $("#hdnVillage").attr("value");
+            var pro_name = $("#hdnProject").attr("value");
+            var promoter_name = $("#hdnPromoter").attr("value");
+            var cert_no = $("#hdnCertiNo").attr("value");
+            var from_date = $("#hdnfromdate").attr("value");
+            var to_date = $("#hdntodate").attr("value");
+            var pro_type = $("#hdnPType").attr("value");
+            var Plot_Bearing = $("#hdnPlotBearing").attr("value");
+
+            if((dist!=undefined && dist!='') || (taluka!=undefined && taluka!='') || (village!=undefined && village!=''))
+            {
+                $("#divTalVill").show();
+                $("#divTalVill2").show();
+                $("#divDistrict").show();
+                $("#divHideAdvanceSearchbtn").show();
+                $("#divAdvanceSearchbtn").hide();
+            }
+            else
+            {
+                $("#divTalVill").hide();
+                $("#divTalVill2").hide();
+                $("#divDistrict").hide();
+                $("#divFromDate").hide();
+                $("#divToDate").hide();
+                $("#divProjectType").hide();
+                $("#divPlotBearing").hide();
+                $("#divAdvanceSearchbtn").show();
+                $("#divHideAdvanceSearchbtn").hide();
+                $("#PromoterName").hide();
+            }
+
+            if(type == "Agent" )
+            {
+                $("#divAgentName").show();
+                $("#divProject").hide();
+                $("#divPromoName").hide();
+                $("#promoter_name").val("");
+                $("#AgentName").val("");
+
+            }
+
+            if(dist != undefined && dist != '')
+            {
+                InnerDistrict(division,'District',dist);
+                //DistrictList('Division','District',dist);
+                if(proj != undefined && proj != '')
+                {
+                    var DivID = $("#Division").val();
+                    var DisID = dist; //$("#" + ID).val();
+                    ProjectName(DivID, DisID, 'Project', proj);
+                }
+                if(taluka!=undefined && taluka!='')
+                {
+                    InnerTaluka(dist, "Taluka", taluka);
+                    if(village!=undefined && village!='')
+                    {
+                        InnerVillage(taluka, 'Village',village);
+                    }else{
+                        InnerVillage(taluka, 'Village',0);
+                    }
+                }else{
+                    InnerTaluka(dist, "Taluka", 0);
+                }
+            }
+        }
+
+        //$('#btnCancel').click(function (e)
+        $("#btnCancel").on("click", function () {
+
+            debugger;
+            
+            location.href = '/';
+            
+
+        });
+
+
+        $('#btnReset').click(function (e)
+        {
+            location.href = '/SearchList/Search';
+        });
+
+        $("#btnSearch").on("click", function () {
+            debugger;
+            var flag = true;
+            var text = "Please enter \n";
+            $("#pageTraverse").val('1');
+            var value = $('#Promoter').val();
+            //if($('#Promoter').is(':checked')){
+            //    if($("#Project").val()=="" && $("#promoter_name").val()=="" && $("#CertiNo").val()=="" && $("#CompletionDate_From").val()=="" &&  $("#CompletionDate_To").val()=="" && $("#District").val()=="" && $("#Taluka").val()=="" && $("#Village").val()=="" && $("#PType").val()=="")
+            //    {
+            //        flag = false;
+            //        text = text + "atleast one of search item.\n";
+            //    }
+            //}
+
+            if($('#Agent').is(':checked'))
+            {
+                if($("#Agent_name").val()!="" && $("#Agent_name").val().length < 4)
+                {
+                    flag = false;
+                    text = text + "atleast 4 characters in Agent name\n";
+                }
+
+                if($("#Agent_name").val()=="" && $("#CertiNo").val()=="" && $("#Division").val()=="" && $("#District").val()=="" && $("#Taluka").val()=="" && $("#Village").val()=="" &&  $("#State").val()=="")
+                {
+                    flag = false;
+                    text = text + "atleast one of search item.\n";
+                }
+            }
+
+            if($("#CompletionDate_From").val()!="" && $("#CompletionDate_To").val()=="")
+            {
+                flag = false;
+                text = text + " Proposed completion To Date also\n";
+            }
+            if($("#CompletionDate_From").val()=="" && $("#CompletionDate_To").val()!="")
+            {
+                flag = false;
+                text = text + " Proposed completion From Date also\n";
+            }
+
+            if($("#Project").val()!="" && $("#Project").val().length < 4)
+            {
+                flag = false;
+                text = text + "atleast 4 characters in project name\n";
+            }
+            if($("#promoter_name").val()!="" && $("#promoter_name").val().length < 4)
+            {
+                flag = false;
+                text = text + "atleast 4 characters in promoter name\n";
+            }
+
+            if($("#Agent").val()!="" && $("#Agent").val().length < 4)
+            {
+                flag = false;
+                text = text + "atleast 4 characters in Agent name\n";
+            }
+
+            if($("#CertiNo").val()!="" && $("#CertiNo").val().length < 4)
+            {
+                flag = false;
+                text = text + " atleast 4 characters in certificate no\n";
+            }
+            if(!flag){
+                alert(text);
+            }
+            return flag;
+        });
+
+        $(document).on("click", "[data-pg]", function () {
+            debugger;
+            var pgtraverse = $(this).attr("data-pg");
+            $("#pageTraverse").val(pgtraverse);
+            $("#frmSearchList").submit();
+        });
+
+        $('#CompletionDate_From').datepicker({ changeMonth: false, changeYear: true,dateFormat: 'dd/mm/yy' , yearRange: "-50:+10" });
+        $('#CompletionDate_To').datepicker({ changeMonth: true, changeYear: true,dateFormat: 'dd/mm/yy',yearRange: "-50:+10" });
+
+        // $('#txtFromPaidDate').datepicker({ dateFormat: "dd/M/yy", changeMonth: true, changeYear: true, yearRange: "-100:+0" });
+    });
+
+</script>
+
+<script>
+
+    function DistrictList(ID, ToBind, SelectedVal) {
+        $("#loader").show();
+        var DivID = $("#" + ID).val(); InnerDistrict(DivID, ToBind, SelectedVal);
+        $("#Taluka").empty();
+        $("#Taluka").append($('<option></option>').val("").html("Select Taluka"));
+        $("#Village").empty();
+        $("#Village").append($('<option></option>').val("").html("Select Village"));
+        $("#loader").hide();
+
+    }
+    function InnerDistrict(DivID, ToBind, SelectedVal) {
+
+        $.ajax
+       ({
+           url: '/SearchList/GetDistrict',
+           type: 'POST',
+           datatype: 'application/json',
+           contentType: 'application/json',
+           data: JSON.stringify({
+               DivID: +DivID
+           }),
+           success: function (result) {
+
+
+               $("#" + ToBind).html("");
+               $("#" + ToBind).append
+                   ($('<option></option>').val('').html('Select District'))
+               $.each(result, function (i, Dis) {
+                   if (SelectedVal == Dis.ID) {
+                       $("#" + ToBind).append
+                             ($("<option selected='selected'></option>").val(Dis.ID).html(Dis.Text))
+                   }
+                   else {
+                       $("#" + ToBind).append($('<option></option>').val(Dis.ID).html(Dis.Text))
+                   }
+               })
+           },
+           error: function () {
+
+           },
+       });
+
+    }
+    function TalukaList(ID, ToBind) {
+
+        $("#loader").show();
+        var DisID = $("#" + ID).val();
+        InnerTaluka(DisID, ToBind, '0');
+        $("#Village").empty();
+        $("#Village").append($('<option></option>').val("").html("Select Village"));
+        $("#loader").hide();
+
+    }
+    function InnerTaluka(DisID, ToBind, SelectedVal) {
+        $.ajax
+       ({
+           url: '/SearchList/GetTaluka',
+           type: 'POST',
+           datatype: 'application/json',
+           contentType: 'application/json',
+           data: JSON.stringify({
+               DisID: +DisID
+           }),
+           success: function (result) {
+               $("#" + ToBind).html("");
+               $("#" + ToBind).append
+                   ($('<option></option>').val('').html('Select Taluka'))
+               $.each(result, function (i, Taluka) {
+                   if (SelectedVal == Taluka.ID) {
+                       $("#" + ToBind).append
+                             ($("<option selected='selected'></option>").val(Taluka.ID).html(Taluka.Text))
+                   }
+                   else {
+                       $("#" + ToBind).append
+                       ($('<option></option>').val(Taluka.ID).html(Taluka.Text))
+                   }
+               })
+           },
+           error: function () {
+
+           },
+       });
+    }
+    function refreshCaptcha() {
+        document.getElementById("captchaImage").src = '/SearchList/SearchCaptcha' + '?' + new Date().getTime();
+    }
+    function VillageList(ID, ToBind) {
+
+        $("#loader").show();
+        var TalukaID = $("#" + ID).val();
+        InnerVillage(TalukaID, ToBind, '0');
+        $("#loader").hide();
+
+    }
+
+    function InnerVillage(TalukaID, ToBind, SelectedVal) {
+
+        $.ajax
+       ({
+           url: '/SearchList/GetVillage',
+           type: 'POST',
+           datatype: 'application/json',
+           contentType: 'application/json',
+           data: JSON.stringify({
+               TalukaID: +TalukaID
+           }),
+           success: function (result) {
+               $("#" + ToBind).html("");
+               $("#" + ToBind).append
+                   ($('<option></option>').val('').html('Select Village'))
+               $.each(result, function (i, Village) {
+
+                   if (SelectedVal == Village.ID) {
+                       $("#" + ToBind).append
+                             ($("<option selected='selected'></option>").val(Village.ID).html(Village.Text))
+                   }
+                   else {
+                       $("#" + ToBind).append
+                          ($('<option></option>').val(Village.ID).html(Village.Text))
+                   }
+               })
+           },
+           error: function () {
+
+           },
+       });
+    }
+
+    //function showFile(e) {
+    //    var id = $(e).attr("data-qstr");
+
+
+    //    //Arg = Arg.split('/');
+    //    $("#dvProgress").show();
+    //    $.ajax
+    //           ({
+    //               url: '/SearchList/ShowCertificate',
+    //               type: 'POST',
+    //               datatype: 'application/json',
+    //               contentType: 'application/json',
+    //               data: '{"ID":"' + id + '"}',
+    //               success: function (result) {
+    //                   $("#dvProgress").hide();
+    //                   $("#dvShowFile").dialog({
+    //                       modal: true,
+    //                       title: '',
+    //                       width: 900,
+    //                       height: 750,
+    //                       buttons: {
+    //                           Close: function () {
+    //                               $(this).dialog('close');
+    //                           }
+    //                       },
+    //                       open: function () {
+    //                           var object = "<object data=\"data:{FileType};base64,{FileName}\" type=\"{FileType}\" title=\"pdf\" width=\"850px\" height=\"850px\">";
+    //                           object += "If you are unable to view file, you can download from <a href = \"{FileName}\">here</a>";
+    //                           object += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
+    //                           object += "</object>";
+    //                           object = object.replace(/{FileName}/g, result);
+    //                           object = object.replace(/{FileType}/g, "application/pdf");
+    //                           $("#dvShowFile").html(object);
+    //                           //alert($("span[id=title]").attr("id"));
+    //                           //$("span[id=title]").hide();
+    //                       }
+    //                   });
+    //               },
+    //               error: function (e) {
+    //                   $("#dvProgress").hide();
+
+    //               },
+    //           });
+    //}
+
+    //Commented above old showFile and added new by pradeep on 03092024
+    function showFile(e) {
+        var id = $(e).attr("data-qstr");
+        $("#dvProgress").show();
+        $.ajax
+               ({
+                   url: '/SearchList/ShowCertificateIframe',
+                   type: 'POST',
+                   datatype: 'application/json',
+                   contentType: 'application/json',
+                   data: '{"ID":"' + id + '"}',
+                   success: function (result)
+                   {
+                       debugger;
+                       $('#divDocumentShowPopUp').html(" ");
+                       $('#divDocumentShowPopUp').html(result);
+                       $('#pdfDocShowModal').modal('show');
+                       $("#dvProgress").hide();
+                   },
+                   error: function (e) {
+                       debugger;
+                       $("#dvProgress").hide();
+
+                   },
+               });
+    }
+
+    //function showFileApplicationPreview(e) {
+    //    debugger;
+    //    var id = $(e).attr("data-qstr");
+
+
+    //    //Arg = Arg.split('/');
+    //    $("#dvProgress").show();
+
+    //    //OLD CODE START
+
+    //    var preview=1;
+
+    //    $.ajax
+    //           ({
+    //               url: '/SearchList/showFileApplicationPreview',
+    //               //url: '/Home/ShowPreview',
+    //               type: 'POST',
+    //               datatype: 'application/json',
+    //               contentType: 'application/json',
+    //               data: '{"ID":"' + id + '", "Preview":"' + preview + '"}',
+    //               success: function (result) {
+    //                   debugger;
+    //                   $("#dvProgress").hide();
+    //                   $("#dvShowFile").dialog({
+    //                       modal: true,
+    //                       title: '',
+    //                       width: 900,
+    //                       height: 750,
+    //                       buttons: {
+    //                           Close: function () {
+    //                               $(this).dialog('close');
+    //                           }
+    //                       },
+    //                       open: function () {
+    //                           var object = "<object data=\"data:{FileType};base64,{FileName}\" type=\"{FileType}\" title=\"pdf\" width=\"850px\" height=\"850px\">";
+    //                           object += "If you are unable to view file, you can download from <a href = \"{FileName}\">here</a>";
+    //                           object += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
+    //                           object += "</object>";
+    //                           object = object.replace(/{FileName}/g, result);
+    //                           object = object.replace(/{FileType}/g, "application/pdf");
+    //                           $("#dvShowFile").html(object);
+    //                           //alert($("span[id=title]").attr("id"));
+    //                           //$("span[id=title]").hide();
+    //                       }
+    //                   });
+    //               },
+    //               error: function (e) {
+    //                   $("#dvProgress").hide();
+
+    //               },
+    //           });
+    //    // OLD CODE END
+
+    //    //var preview=1;
+
+    //    //$.ajax
+    //    //      ({
+    //    //          url: '/Home/ShowPreview',
+    //    //          type: 'POST',
+    //    //          datatype: 'application/json',
+    //    //          contentType: 'application/json',
+    //    //          data: '{"ID":"' + id + '", "Preview":"' + preview + '"}',
+    //    //          success: function (result) {
+    //    //              $("#dvProgress").hide();
+    //    //              $("#dvShowFile").dialog({
+    //    //                  modal: true,
+    //    //                  title: '',
+    //    //                  width: 900,
+    //    //                  height: 750,
+    //    //                  buttons: {
+    //    //                      Close: function () {
+    //    //                          $(this).dialog('close');
+    //    //                      }
+    //    //                  },
+    //    //                  open: function () {
+    //    //                      var object = "<object data=\"data:{FileType};base64,{FileName}\" type=\"{FileType}\" title=\"pdf\" width=\"850px\" height=\"850px\">";
+    //    //                      object += "If you are unable to view file, you can download from <a href = \"{FileName}\">here</a>";
+    //    //                      object += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
+    //    //                      object += "</object>";
+    //    //                      object = object.replace(/{FileName}/g, result);
+    //    //                      object = object.replace(/{FileType}/g, "application/pdf");
+    //    //                      $("#dvShowFile").html(object);
+    //    //                      //alert($("span[id=title]").attr("id"));
+    //    //                      //$("span[id=title]").hide();
+    //    //                  }
+    //    //              });
+    //    //          },
+    //    //          error: function (e) {
+    //    //              $("#dvProgress").hide();
+
+    //    //          },
+    //    //      });
+
+    //}
+
+    //Commented above old showFileApplicationPreview and added new by pradeep on 19092024
+    function showFileApplicationPreview(e) {
+        var id = $(e).attr("data-qstr");
+        $("#dvProgress").show();
+        var preview=1;
+        $.ajax
+               ({
+                   url: '/SearchList/showFileApplicationPreviewIframe',
+                   type: 'POST',
+                   datatype: 'application/json',
+                   contentType: 'application/json',
+                   data: '{"ID":"' + id + '", "Preview":"' + preview + '"}',
+                   success: function (result) {
+                       $('#divDocumentShowPopUp').html(" ");
+                       $('#divDocumentShowPopUp').html(result);
+                       $('#pdfDocShowModal').modal('show');
+                       $("#dvProgress").hide();
+                   },
+                   error: function (e) {
+                       $("#dvProgress").hide();
+
+                   },
+               });
+    }
+
+    //function showExtensionFile(e) {
+    //    var id = $(e).attr("data-qstr");
+
+
+    //    //Arg = Arg.split('/');
+    //    $("#dvProgress").show();
+    //    $.ajax
+    //           ({
+    //               url: '/SearchList/ShowExtensionCertificate',
+    //               type: 'POST',
+    //               datatype: 'application/json',
+    //               contentType: 'application/json',
+    //               data: '{"ID":"' + id + '"}',
+    //               success: function (result) {
+    //                   $("#dvProgress").hide();
+    //                   $("#dvShowFile").dialog({
+    //                       modal: true,
+    //                       title: '',
+    //                       width: 900,
+    //                       height: 750,
+    //                       buttons: {
+    //                           Close: function () {
+    //                               $(this).dialog('close');
+    //                           }
+    //                       },
+    //                       open: function () {
+    //                           var object = "<object data=\"data:{FileType};base64,{FileName}\" type=\"{FileType}\" title=\"pdf\" width=\"850px\" height=\"850px\">";
+    //                           object += "If you are unable to view file, you can download from <a href = \"{FileName}\">here</a>";
+    //                           object += " or download <a target = \"_blank\" href = \"http://get.adobe.com/reader/\">Adobe PDF Reader</a> to view the file.";
+    //                           object += "</object>";
+    //                           object = object.replace(/{FileName}/g, result);
+    //                           object = object.replace(/{FileType}/g, "application/pdf");
+    //                           $("#dvShowFile").html(object);
+    //                           //alert($("span[id=title]").attr("id"));
+    //                           //$("span[id=title]").hide();
+    //                       }
+    //                   });
+    //               },
+    //               error: function (e) {
+    //                   $("#dvProgress").hide();
+
+    //               },
+    //           });
+    //}
+
+    //Commented above old showExtensionFile and added new by pradeep on 19092024
+    function showExtensionFile(e) {
+        var id = $(e).attr("data-qstr");
+        $("#dvProgress").show();
+        $.ajax
+               ({
+                   url: '/SearchList/ShowExtensionCertificateIframe',
+                   type: 'POST',
+                   datatype: 'application/json',
+                   contentType: 'application/json',
+                   data: '{"ID":"' + id + '"}',
+                   success: function (result) {
+                       $('#divDocumentShowPopUp').html(" ");
+                       $('#divDocumentShowPopUp').html(result);
+                       $('#pdfDocShowModal').modal('show');
+                       $("#dvProgress").hide();
+                   },
+                   error: function (e) {
+                       $("#dvProgress").hide();
+
+                   },
+               });
+    }
+
+    function showWarExtensionFile(e) {
+        var id = $(e).attr("data-qstr");
+        $("#dvProgress").show();
+        $.ajax
+               ({
+                   url: '/SearchList/ShowWarExtensionCertificateIframe',
+                   type: 'POST',
+                   datatype: 'application/json',
+                   contentType: 'application/json',
+                   data: '{"ID":"' + id + '"}',
+                   success: function (result) {
+                       $('#divDocumentShowPopUp').html(" ");
+                       $('#divDocumentShowPopUp').html(result);
+                       $('#pdfDocShowModal').modal('show');
+                       $("#dvProgress").hide();
+                   },
+                   error: function (e) {
+                       $("#dvProgress").hide();
+
+                   },
+               });
+    }
+
+    function direction_on_map(LATITUDE,LONGITUDE) {
+        debugger;
+        // window.open('https://www.pmccare.in/pmc_siteplan/get_direction.html?NAME=' + id_val, '_blank');
+        window.open('../GIS/get_direction.aspx?LAT=' + LATITUDE +'&LNG= '+ LONGITUDE.trim(), '_blank');
+    }
+
+    function view_on_map(id_val) {
+        debugger;
+        window.open('../GIS/view_map.aspx?ID=' + id_val, '_blank');
+    }
+
+    function loadmap() {
+        debugger;
+        //window.open('../GIS/map.aspx', '_blank');
+        window.open('../GIS/default.aspx', '_blank');
+    }
+
+</script>
+
+
+
+<form action="/SearchList/Search" id="frmSearchList" method="post" novalidate="novalidate"><input name="__RequestVerificationToken" type="hidden" value="TWirALRhy6Q2mFYH_dLbj6P2qxm-taNpaE11KSmpoyeszFktXF-Sc6Bl0B4JseTUATUlA0yumkLW4FOCv-4RAHXXlbR3Ar-LV2mUMAwRddY1">    <div class="container">
+        <div class="header-search">
+            <img src="/Images/rera logo.png" alt="rera logo" class="rera-inner-logo">
+             
+            <span class="header-title">Telangana Real Estate Regulatory Authority</span>
+            <div class="clearfix"></div>
+        </div>
+        <div class="boxContent">
+            <div class="display-flex w-100">
+                <h2 id="projectSearchHeading" class="text-center">Search Project Details</h2>
+                <div class="">
+                    <input type="button" value="View all projects on Map" class="btn btn-sm btn-danger pull-right" name="btnmap" id="btnmap" onclick="loadmap()">
+                    <a class="btn btn-sm me-2 btn-info" href="/Login/Login">Back</a>
+                </div>
+            </div>
+
+            <div class="contentArea">
+                <div class="cardBox">
+
+                    <div class="text-center">
+                        <label for="Type">Select User Type</label><span style="color: Red;">*</span>
+                    </div>
+                    <div class="radioBtn">
+                       
+                        <label for="Promoter">
+                            <input data-val="true" data-val-required="Please Select " id="Promoter" name="Type" onchange="Checkboxck('Promoter')" type="radio" value="Promoter">
+                            Registered Projects
+                        </label>
+                        <label for="Agent">
+                            <input id="Agent" name="Type" onchange="Checkboxck('Agent')" type="radio" value="Agent">
+                            Registered Agents
+                        </label>
+
+                    </div>
+
+                    <input data-val="true" data-val-number="The field ID must be a number." data-val-required="The ID field is required." id="ID" name="ID" type="hidden" value="0">
+                    <input data-val="true" data-val-number="The field pageTraverse must be a number." data-val-required="The pageTraverse field is required." id="pageTraverse" name="pageTraverse" type="hidden" value="0">
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Type" data-valmsg-replace="true"></span>
+                    <input id="hdnRoleIDPageload" name="RoleIDPageload" type="hidden" value="1">
+
+                    <script type="text/javascript">
+                                function Checkboxck(ID) {
+                                    var value = $('#' + ID).val();
+
+                                    if (value == "Promoter") {
+                                        $("#divProject").show();
+                                        $("#divPromoName").show();
+                                        $("#divTalVill").hide();
+                                        $("#divTalVill2").hide();
+                                        $("#divCerti").show();
+                                        $("#divDistrict").hide();
+                                        $("#divFromDate").hide();
+                                        $("#divToDate").hide();
+                                        $("#CertiNo").val("");
+                                        $("#gridview").html("");
+                                        $("#div_norecords").css("display","block");
+                                        $("#divProjectType").hide();
+                                        $("#divPlotBearing").hide();
+                                        $("#divHideAdvanceSearchbtn").hide();
+                                        $("#divAdvanceSearchbtn").show();
+                                        $("#btnHideAdvance").hide();
+                                        $("#btnAdvance").show();
+                                        $("#divAgentName").hide();
+                                        $("#dProject").val('');
+                                        $("#Agent_Name").val('');
+                                        $('#District').prop('selectedIndex',0);
+                                        $('#Taluka').prop('selectedIndex',0);
+                                        $('#Village').prop('selectedIndex',0);
+                                        $('#PType').prop('selectedIndex',0);
+                                        $("#PlotBearing").val("");
+                                        //$("#btnSearch").click();
+                                        $("#frmSearchList").submit();
+                                    }
+                                    else  {
+                                        $("#divProject").hide();
+                                        $("#divPromoName").show();
+                                        $("#divTalVill").hide();
+                                        $("#divTalVill2").hide();
+                                        $("#divCerti").show();
+                                        $("#divDistrict").hide();
+                                        $("#divFromDate").hide();
+                                        $("#divToDate").hide();
+                                        $("#CertiNo").val("");
+                                        $("#gridview").html("");
+                                        $("#div_norecords").css("display","block");
+                                        $("#divProjectType").hide();
+                                        $("#divPlotBearing").hide();
+                                        $("#divHideAdvanceSearchbtn").hide();
+                                        $("#divAdvanceSearchbtn").show();
+                                        $("#btnHideAdvance").hide();
+                                        $("#btnAdvance").show();
+                                        $("#divPromoName").hide();
+                                        $("#divAgentName").show();
+                                        $("#promoter_name").val("");
+                                        $("#Agent_name").val("");
+                                        $("#Project").val('');
+                                        $('#District').prop('selectedIndex',0);
+                                        $('#Taluka').prop('selectedIndex',0);
+                                        $('#Village').prop('selectedIndex',0);
+                                        $('#PType').prop('selectedIndex',0);
+                                        $("#PlotBearing").val("");
+                                        //$("#btnSearch").click();
+                                        $("#frmSearchList").submit();
+                                    }
+                                }
+
+                                function loadAdvanceOption() {
+                                    $("#divDistrict").show();
+                                    $("#divTalVill").show();
+                                    $("#divTalVill2").show();
+
+                                    if($('#Promoter').is(':checked'))
+                                    {
+                                        $("#divFromDate").show();
+                                        $("#divToDate").show();
+                                        $("#divProjectType").show();
+                                        $("#divPlotBearing").show();
+                                        $("#divProject").show();
+                                        $("#divDistrict").show();
+                                        $("#divTalVill").show();
+                                        $("#divTalVill2").show();
+                                    }
+                                    if($('#Agent').is(':checked'))
+                                    {
+                                        $("#divFromDate").hide();
+                                        $("#divToDate").hide();
+                                        $("#divProjectType").hide();
+                                        $("#divPlotBearing").hide();
+                                        $("#divProject").hide();
+                                        $("#promoter_name").val("");
+                                    }
+                                    $("#btnAdvance").hide();
+                                    $("#btnHideAdvance").show();
+                                    $("#divAdvanceSearchbtn").hide();
+                                    $("#divHideAdvanceSearchbtn").show();
+                                }
+                                function HideAdvanceOption() {
+                                    $("#btnHideAdvance").hide();
+                                    $("#btnAdvance").show();
+                                    $("#divDistrict").hide();
+                                    $("#divTalVill").hide();
+                                    $("#divTalVill2").hide();
+                                    $("#divFromDate").hide();
+                                    $("#divToDate").hide();
+                                    $("#divProjectType").hide();
+                                    $("#divPlotBearing").hide();
+                                    $("#divAdvanceSearchbtn").show();
+                                    $("#divHideAdvanceSearchbtn").hide();
+                                    $("#CompletionDate_From").val("");
+                                    $("#CompletionDate_To").val("");
+                                }
+
+                    </script>
+
+
+                </div>
+                <div class="cardBox w-100 dflex mt-2">
+                    <div id="divProject" class="formBox">
+                        
+                        <input class="form-control" data-val="true" data-val-regex="special characters are not allowed." data-val-regex-pattern="([a-zA-Z0-9_ .&amp;'-]+)" id="Project" maxlength="100" name="Project" onkeypress="return IsAlphabetNumericSpace(event);" placeholder="Project Name" type="text" value="" autocomplete="off">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Project" data-valmsg-replace="true"></span>
+                        <input name="hdnProject" id="hdnProject" type="hidden" value="">
+                    </div>
+                    <div id="divPromoName" class="formBox">
+                        
+                        <input class="form-control" data-val="true" data-val-regex="special characters are not allowed." data-val-regex-pattern="([a-zA-Z0-9_ .&amp;'-]+)" id="promoter_name" maxlength="50" name="Promoter" onkeypress="return IsAlphabetNumericSpace(event);" placeholder="Promoter Name" type="text" value="" autocomplete="off">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Promoter" data-valmsg-replace="true"></span>
+                        <input name="hdnPromoter" id="hdnPromoter" type="hidden" value="">
+                    </div>
+                    <div id="divAgentName" class="formBox" style="display: none;">
+                        
+                        <input class="form-control" data-val="true" data-val-regex="special characters are not allowed." data-val-regex-pattern="([a-zA-Z0-9_ .&amp;'-]+)" id="Agent_name" maxlength="25" name="AgentName" onkeypress="return IsAlphabetNumericSpace(event);" placeholder="Agent Name" type="text" value="" autocomplete="off">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="AgentName" data-valmsg-replace="true"></span>
+                        <input name="hdnAgent" id="hdnAgent" type="hidden" value="">
+                    </div>
+                    <div id="divCerti" class="formBox">
+                        
+                        <input class="form-control" data-val="true" data-val-regex="special characters are not allowed." data-val-regex-pattern="([a-zA-Z0-9_ .&amp;'-]+)" id="CertiNo" maxlength="15" name="CertiNo" onkeypress="return IsAlphabetNumeric(event);" placeholder="TelanganaRERA Project / Agent Registration Number" type="text" value="" autocomplete="off">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="CertiNo" data-valmsg-replace="true"></span>
+                        <input name="hdnCertiNo" id="hdnCertiNo" type="hidden" value="">
+                        </div>
+
+                    </div>
+
+
+                <div class="cardBox w-100 dflex mt-2">
+
+                    <div id="divDistrict" class="formBox" style="display: none;">
+                   
+                            
+                            <select class="form-control" id="District" name="District" onchange="TalukaList('District','Taluka');"><option value="">Select District</option>
+<option value="1">Adilabad</option>
+<option value="9">Bhadradri Kothagudem </option>
+<option value="25">Hyderabad</option>
+<option value="28">Jagithyal</option>
+<option value="6">Jangaon</option>
+<option value="5">Jayashankar</option>
+<option value="17">Jogulamba Gadwal</option>
+<option value="2">Kamareddy</option>
+<option value="27">Karimnagar</option>
+<option value="8">Khammam</option>
+<option value="26">Kumuram Bheem (Asifabad)</option>
+<option value="7">Mahabubabad</option>
+<option value="14">Mahabubnagar</option>
+<option value="12">Mancherial</option>
+<option value="10">Medak</option>
+<option value="22">Medchal-Malkajgiri</option>
+<option value="16">Nagarkurnool</option>
+<option value="18">Nalgonda</option>
+<option value="702">Narayanpet</option>
+<option value="23">Nirmal</option>
+<option value="31">Nizamabad</option>
+<option value="29">Peddapalli</option>
+<option value="30">Rajanna Sircilla</option>
+<option value="24">Ranga Reddy</option>
+<option value="11">Sangareddy</option>
+<option value="13">Siddipet</option>
+<option value="19">Suryapet</option>
+<option value="21">Vikarabad</option>
+<option value="15">Wanaparthy</option>
+<option value="4">Warangal Rural </option>
+<option value="3">Warangal Urban</option>
+<option value="20">Yadadri Bhuvanagiri</option>
+</select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="District" data-valmsg-replace="true"></span>
+                            <input name="hdnDivision" id="hdnDivision" type="hidden" value="">
+                            <input name="hdnDistrict" id="hdnDistrict" type="hidden" value="">
+                            <input name="hdnProject" id="hdnProject" type="hidden" value="">
+                            <input name="hdnDTaluka" id="hdnTaluka" type="hidden" value="">
+                            <input name="hdnVillage" id="hdnVillage" type="hidden" value="">
+                            <input name="hdnState" id="hdnState" type="hidden" value="">
+                      
+
+                    </div>
+                    <div id="divTalVill" class="formBox" style="display: none;">
+                      
+                            
+                            <select class="form-control" id="Taluka" name="Taluka" onchange="VillageList('Taluka','Village');"><option value="">Select Taluka</option>
+</select>
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Taluka" data-valmsg-replace="true"></span>
+               
+
+                       
+                    </div>
+
+                    <div id="divTalVill2" class="formBox" style="display: none;">
+                        
+                        <select class="form-control" id="Village" name="Village"><option value="">Select Village</option>
+</select>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="Village" data-valmsg-replace="true"></span>
+                    </div>
+
+                    </div>
+                </div>
+
+            <div class="row mt-2">
+                <div class="form-group">
+                   
+                        <div id="divFromDate" class="col-md-3 col-sm-3" style="display: none;">
+                            <label for="dateofCompletion">Proposed Date of Completion</label>
+
+                            <label for="CompletionDate_From">From</label>
+                            <input class="date-picker form-control hasDatepicker" id="CompletionDate_From" name="CompletionDate_From" readonly="readonly" style="border-radius: 5px;" type="text" value="" autocomplete="off">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="CompletionDate_From" data-valmsg-replace="true"></span>
+                            <input name="hdnfromdate" id="hdnfromdate" type="hidden" value="">
+                        </div>
+                      
+                   
+                  
+                        <div class="col-md-3 col-sm-3" id="divToDate" style="display: none;">
+                            <label for="CompletionDate_To">To</label>
+                            <input class="date-picker form-control hasDatepicker" id="CompletionDate_To" name="CompletionDate_To" readonly="readonly" style="border-radius: 5px;" type="text" value="" autocomplete="off">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="CompletionDate_To" data-valmsg-replace="true"></span>
+                            <input name="hdntodate" id="hdntodate" type="hidden" value="">
+                        </div>
+                     
+                    <div class="col-md-3 col-sm-3" id="divProjectType" style="display: none;">
+                        <label for="PType">Project Type</label>
+                        
+                        <select value="" class="form-control" data-val="true" data-val-number="The field Project Type must be a number." id="PType" name="PType"><option value="">Select Type</option>
+<option value="12">Commercial</option>
+<option value="13">Residential</option>
+<option value="15">Plotted Development</option>
+<option value="33">Mixed Development (Residential &amp; Commercial)</option>
+</select>
+                        <input name="hdnPType" id="hdnPType" type="hidden" value="">
+                    </div>
+
+                    <div class="col-md-3 col-sm-3" id="divPlotBearing" style="display: none;">
+                        <label for="PlotBearing">Sy./No</label>
+                        <input class="form-control" id="PlotBearing" name="PlotBearing" placeholder="Sy no" type="text" value="" autocomplete="off">
+                        <input name="hdnPlotBearing" id="hdnPlotBearing" type="hidden" value="">
+                    </div>
+                        <div class="clearfix"></div>
+                    </div>
+            </div>
+          
+   
+            <div class="row">
+                <div class="form-group">
+
+                    <div class="col-md-4 col-sm-4 col-xs-12" id="DivButton">
+                        <div id="divAdvanceSearchbtn" style="display: block;">
+                            <input type="button" value="Advanced Search" class="btn btn-sm btn-danger" style="border-radius: 5px;" name="btnAdvance" id="btnAdvance" onclick="loadAdvanceOption()">
+                        </div>
+                        <div id="divHideAdvanceSearchbtn" style="display: none;">
+                            <input type="button" value="Hide Advanced Search" class="btn btn-sm btn-danger" name="btnHideAdvance" id="btnHideAdvance" onclick="HideAdvanceOption()">
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div id="divCaptcha">
+                            <img src="/SearchList/SearchCaptcha" alt="Captcha" id="captchaImage">
+                            <button type="button" onclick="refreshCaptcha()">Try another</button><br>Enter the text below as you see in the captcha
+                            <input autocompletetype="Disabled" class="form-control text-box single-line" id="Captcha" maxlength="6" name="Captcha" oncopy="return false" oncut="return false" placeholder="Captcha" type="text" value="" autocomplete="off">
+                            <div class="col-md-4 col-sm-4 col-xs-12"><span class="field-validation-valid" data-valmsg-for="Captcha" data-valmsg-replace="true"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="form-group">
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <input type="submit" value="Search" class="btn btn-info btn-sm" style="border-radius: 5px;" name="Command" id="btnSearch">
+                        <a class="btn btn-sm btn-danger" href="/Login/Login" style="border-radius: 5px;">Back</a>
+                        <a class="btn btn-sm btn-danger" href="/SearchList/Search" style="border-radius: 5px;">Reset</a>
+                    </div>
+                </div>
+            </div>
+                
+            
+        
+            
+            <div id="dvShowFile" class="modal dvShowFile" style="display:none;">
+
+            </div>
+        </div>
+      <div id="DivBind">
+            <div class="x_panel">
+                
+                <div class="x_content" id="gridview">
+
+                                    <h4><label for="No_Records_Found">No Records Found</label></h4>
+                </div>
+
+                <div id="div_norecords" style="display:none">
+                    <h4 style="font-size: 16px;"><label for="No_Records_Found">No Records Found</label></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dvProgress" class="loader" style="opacity: 0.0445531;"></div>
+
+<style type="text/css">
+
+    table {
+        border-spacing: 10px;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    .modal-dialog {
+        width: 900px;
+    }
+
+    .modal-body {
+        height: 750px;
+    }
+
+
+</style>
+
+
+
+<div id="loader"></div>
+
+<div class="modal fade" id="pdfDocShowModal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    ×
+                </button>
+                <h4 class="modal-title">
+                    Document Viewer
+                </h4>
+            </div>
+            <div id="divDocumentShowPopUp" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div></form>
+        </div>
+    </section>
+    <div class="clearfix"></div>
+    <footer>
+        <div class="container">
+             
+            <p>© This is the official Application of Telangana Real Estate Regulatory Authority, India. All Rights Reserved.</p>
+            <span><a href="https://mahait.org" target="_blank" title="Maintained by - MahaIT Corporation Limited">
+    <img alt="MahaIT Corporation Limited -  Logo" src="/Images/mahaonline.png">
+</a></span>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        (function ($) {
+            $('body').on('hidden', '.modal', function () {
+                $(this).removeData("modal");
+            });
+        })(jQuery);
+    </script>
+
+
+<div class="sweet-container"><div class="sweet-overlay" tabindex="-1"></div><div class="sweet-alert" tabindex="-1"><div class="icon error"><span class="x-mark"><span class="line left"></span><span class="line right"></span></span></div><div class="icon warning"> <span class="body"></span> <span class="dot"></span> </div> <div class="icon info"></div> <div class="icon success"> <span class="line tip"></span> <span class="line long"></span> <div class="placeholder"></div> <div class="fix"></div> </div> <div class="icon custom"></div> <h2>Title</h2><p>Text</p><hr><button class="confirm">OK</button><button class="cancel">Cancel</button></div></div><div class="sweet-container"><div class="sweet-overlay" tabindex="-1"></div><div class="sweet-alert" tabindex="-1"><div class="icon error"><span class="x-mark"><span class="line left"></span><span class="line right"></span></span></div><div class="icon warning"> <span class="body"></span> <span class="dot"></span> </div> <div class="icon info"></div> <div class="icon success"> <span class="line tip"></span> <span class="line long"></span> <div class="placeholder"></div> <div class="fix"></div> </div> <div class="icon custom"></div> <h2>Title</h2><p>Text</p><hr><button class="confirm">OK</button><button class="cancel">Cancel</button></div></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
